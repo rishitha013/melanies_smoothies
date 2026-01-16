@@ -22,8 +22,11 @@ my_dataframe = (
     session
     .table("smoothies.public.fruit_options")
     .select(col("FRUIT_NAME"))
-    .to_pandas()
+    .col('SEARCH_ON')
 )
+st.dataframe(data=any_dataframe,use_container_width=True)
+st.stop()
+
 
 # Multiselect for ingredients
 ingredients_list = st.multiselect(
